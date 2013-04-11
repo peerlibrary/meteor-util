@@ -1,0 +1,8 @@
+{
+  "name": "util",
+  "description": "Meteor smart package for util node.js module",
+  "homepage": "https://github.com/peerlibrary/meteor-util",
+  "author": "The PeerLibrary Project",
+  "version": "0.1.0",
+  "git": "https://github.com/peerlibrary/meteor-util.git"
+}
