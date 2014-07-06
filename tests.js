@@ -1,4 +1,4 @@
-Tinytest.add('meteor-util', function (test) {
+Tinytest.add('util', function (test) {
   var isDefined = false;
   try {
     util;
