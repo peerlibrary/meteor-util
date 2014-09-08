@@ -7,7 +7,7 @@ Tinytest.add('util', function (test) {
   catch (e) {
   }
   test.isTrue(isDefined, "util is not defined");
-  test.isTrue(Package.util.util, "Package.util.util is not defined");
+  test.isTrue(Package['peerlibrary:util'].util, "Package.peerlibrary:util.util is not defined");
 
   test.equal(util.inspect({}), "{}");
 });
