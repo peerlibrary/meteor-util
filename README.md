@@ -11,5 +11,5 @@ Installation
 ------------
 
 ```
-mrt add util
+meteor add peerlibrary:util
 ```
