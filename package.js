@@ -1,27 +1,44 @@
 Package.describe({
-  summary: "Meteor smart package for util node.js module",
-  version: '0.2.3',
   name: 'peerlibrary:util',
+  summary: "Meteor smart package for util node.js module",
+  version: '0.3.0',
   git: 'https://github.com/peerlibrary/meteor-util.git'
 });
 
-Package.on_use(function (api) {
-  api.use('underscore');
-  api.versionsFrom('METEOR@0.9.1.1');
+Package.onUse(function (api) {
+  api.versionsFrom('METEOR@1.2.0.1');
+
+  // Core dependencies.
+  api.use([
+    'underscore',
+    'ecmascript'
+  ]);
+
   api.export('util');
 
-  api.add_files([
+  api.addFiles([
     'before.js',
     'node.js/lib/util.js',
     'after.js'
   ], 'client');
 
-  api.add_files([
+  api.addFiles([
     'server.js'
   ], 'server');
 });
 
-Package.on_test(function (api) {
-  api.use(['peerlibrary:util', 'tinytest', 'test-helpers']);
-  api.add_files('tests.js');
+Package.onTest(function (api) {
+  api.use([
+    'tinytest',
+    'test-helpers'
+  ]);
+
+  // Internal dependencies.
+  api.use([
+    'peerlibrary:util'
+  ]);
+
+  api.addFiles([
+    'tests.js'
+  ]);
 });
