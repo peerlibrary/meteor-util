@@ -6,8 +6,15 @@ Package.describe({
 });
 
 Package.on_use(function (api) {
+  api.use('underscore');
   api.versionsFrom('METEOR@0.9.1.1');
   api.export('util');
+
+  api.add_files([
+    'before.js',
+    'node.js/lib/util.js',
+    'after.js'
+  ], 'client');
 
   api.add_files([
     'server.js'
@@ -15,6 +22,6 @@ Package.on_use(function (api) {
 });
 
 Package.on_test(function (api) {
-  api.use(['peerlibrary:util', 'tinytest', 'test-helpers'], 'server');
-  api.add_files('tests.js', 'server');
+  api.use(['peerlibrary:util', 'tinytest', 'test-helpers']);
+  api.add_files('tests.js');
 });
