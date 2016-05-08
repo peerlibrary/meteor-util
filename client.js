@@ -1,4 +1,4 @@
-export const util = require("util");
+export const util = require("./util.js");
 
 var arrayBufferConstructor = typeof ArrayBuffer === 'function' && ArrayBuffer;
 var setConstructor = typeof Set === 'function' && Set;

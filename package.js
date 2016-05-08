@@ -5,12 +5,6 @@ Package.describe({
   git: 'https://github.com/peerlibrary/meteor-util.git'
 });
 
-// Fallback in case the application developer has not installed
-// meteor-node-stubs via npm.
-Npm.depends({
-  util: "0.10.3"
-});
-
 Package.onUse(function (api) {
   api.versionsFrom('METEOR@1.3');
 
