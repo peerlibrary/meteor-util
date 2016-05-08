@@ -1,1 +1,1 @@
-util = Npm.require('util');
+export const util = require('util');

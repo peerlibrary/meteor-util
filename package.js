@@ -1,12 +1,18 @@
 Package.describe({
   name: 'peerlibrary:util',
   summary: "Meteor smart package for util node.js module",
-  version: '0.3.0',
+  version: '0.4.0',
   git: 'https://github.com/peerlibrary/meteor-util.git'
 });
 
+// Fallback in case the application developer has not installed
+// meteor-node-stubs via npm.
+Npm.depends({
+  util: "0.10.3"
+});
+
 Package.onUse(function (api) {
-  api.versionsFrom('METEOR@1.2.0.1');
+  api.versionsFrom('METEOR@1.3');
 
   // Core dependencies.
   api.use([
@@ -16,15 +22,8 @@ Package.onUse(function (api) {
 
   api.export('util');
 
-  api.addFiles([
-    'before.js',
-    'node.js/lib/util.js',
-    'after.js'
-  ], 'client');
-
-  api.addFiles([
-    'server.js'
-  ], 'server');
+  api.mainModule('client.js', 'client');
+  api.mainModule('server.js', 'server');
 });
 
 Package.onTest(function (api) {
