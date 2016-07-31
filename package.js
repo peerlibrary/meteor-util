@@ -10,9 +10,13 @@ Package.onUse(function (api) {
 
   // Core dependencies.
   api.use([
-    'underscore',
-    'ecmascript'
+    'underscore'
   ]);
+
+  // 3rd party dependencies.
+  api.use([
+    'peerlibrary:ecmascript-compiler@0.5.7'
+  ], 'server');
 
   api.export('util');
 
