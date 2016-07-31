@@ -6,7 +6,7 @@ Package.describe({
 });
 
 Package.onUse(function (api) {
-  api.versionsFrom('METEOR@1.2.0.1');
+  api.versionsFrom('METEOR@1.3');
 
   // Core dependencies.
   api.use([
@@ -20,15 +20,8 @@ Package.onUse(function (api) {
 
   api.export('util');
 
-  api.addFiles([
-    'before.js',
-    'node.js/lib/util.js',
-    'after.js'
-  ], 'client');
-
-  api.addFiles([
-    'server.js'
-  ], 'server');
+  api.mainModule('client.js', 'client');
+  api.mainModule('server.js', 'server');
 });
 
 Package.onTest(function (api) {
