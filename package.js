@@ -15,8 +15,8 @@ Package.onUse(function (api) {
 
   // 3rd party dependencies.
   api.use([
-    'peerlibrary:ecmascript-compiler@0.5.7'
-  ], 'server');
+    'peerlibrary:ecmascript-compiler@0.5.7_2'
+  ]);
 
   api.export('util');
 
