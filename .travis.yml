@@ -4,3 +4,4 @@ node_js:
 sudo: required
 before_install:
   - "curl -L http://git.io/ejPSng | /bin/sh"
+  - "rm -r node.js/benchmark/ node.js/deps/ node.js/doc/ node.js/src/ node.js/test/ node.js/tools/"
